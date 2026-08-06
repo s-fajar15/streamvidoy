@@ -97,5 +97,4 @@ npm run dev
 Android (Termux)
 ```bash
 pkg install ffmpeg
----
 
