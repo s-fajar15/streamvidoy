@@ -95,13 +95,7 @@ npm run dev
 - FFprobe
 
 Android (Termux)
-
 ```bash
 pkg install ffmpeg
 ---
 
-## License
-
-MIT License
-
----
