@@ -1,303 +1,116 @@
-# VDY Downloader
-
 <div align="center">
 
-Modern video downloader berbasis **Next.js 15** untuk mengekstraksi metadata, menganalisis sumber video, dan mengunduh media melalui direct stream maupun HLS.
+# VDY Downloader
+
+Modern, fast, and reliable video downloader built with Next.js 15.
+
+Extract video metadata, analyze HLS/CDN streams, and download media through a clean, responsive interface.
+
+[Demo](#) • [Documentation](#) • [Report Bug](#) • [Request Feature](#)
+
+---
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black)
-![React](https://img.shields.io/badge/React-19-61DAFB)
+![React](https://img.shields.io/badge/React-19-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38BDF8)
-![FFmpeg](https://img.shields.io/badge/FFmpeg-Supported-green)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 </div>
 
 ---
 
-## ✨ Fitur
+## Overview
 
-- Analisis URL video.
-- Ekstraksi metadata video.
-- Dukungan Direct MP4 dan HLS (.m3u8).
-- Progress download real-time.
-- Riwayat download.
-- Skeleton loading.
-- Responsive (Desktop, Tablet, Android, iPhone).
-- Dark Mode.
-- UI modern berbasis App Router.
+Vidoy Downloader adalah aplikasi web modern untuk menganalisis, mengekstraksi, dan mengunduh video dari **vdy.to** menggunakan antarmuka yang cepat, bersih, dan responsif.
+
+Project ini dibangun dengan **Next.js App Router**, **React 19**, dan **Tailwind CSS v4**, serta mendukung ekstraksi **Direct MP4** maupun **HLS (.m3u8)**.
 
 ---
 
-# Stack
+## Features
 
-- Next.js 15 (App Router)
-- React 19
-- TypeScript
-- Tailwind CSS v4
-- Framer Motion
-- Lucide React
-- React Hook Form
-- Zod
-- FFmpeg / FFprobe
+- 🎥 Analisis URL video
+- 📦 Metadata Extraction
+- ⚡ Direct MP4 Download
+- 📺 HLS (.m3u8) Support
+- 📈 Real-time Download Progress
+- 📂 Download History
+- 🌙 Dark Mode
+- 📱 Fully Responsive
+- 🎨 Modern UI
+- 🔒 Secure API Routes
 
 ---
 
-# Arsitektur
+## Preview
+
+> Tambahkan screenshot aplikasi di sini.
+
+```
+/public/preview-light.png
+/public/preview-dark.png
+```
+
+---
+
+## Tech Stack
+
+| Technology | Version |
+|------------|----------|
+| Next.js | 15 |
+| React | 19 |
+| TypeScript | Latest |
+| Tailwind CSS | v4 |
+| Framer Motion | Latest |
+| Lucide React | Latest |
+| FFmpeg | Required |
+
+---
+
+## Project Structure
 
 ```text
-Browser
-    │
-    ▼
-React Components
-    │
-    ▼
-API Routes
-    │
-    ├── /api/extract
-    ├── /api/download
-    ├── /api/history
-    └── /api/health
-    │
-    ▼
-Utility Layer
-    ├── Extract Engine
-    ├── Download Engine
-    ├── FFmpeg Helper
-    └── History Manager
-    │
-    ▼
-File System
+app/
+components/
+hooks/
+lib/
+utils/
+downloads/
+history/
+middleware.ts
 ```
 
 ---
 
-# Struktur Proyek
-
-```text
-vdy-web
-├── app
-│   ├── api
-│   │   ├── download
-│   │   ├── extract
-│   │   ├── history
-│   │   └── health
-│   ├── globals.css
-│   ├── layout.tsx
-│   ├── page.tsx
-│   ├── loading.tsx
-│   └── error.tsx
-│
-├── components
-│   ├── downloader
-│   ├── layout
-│   └── ui
-│
-├── hooks
-│
-├── lib
-│
-├── utils
-│
-├── middleware.ts
-│
-├── tailwind.config.ts
-│
-└── package.json
-```
-
----
-
-# API
-
-## POST `/api/extract`
-
-Menganalisis URL video dan mengembalikan metadata.
-
-Request
-
-```json
-{
-  "url": "https://vdy.to/e/xxxx"
-}
-```
-
----
-
-## POST `/api/download`
-
-Memulai proses download.
-
-Request
-
-```json
-{
-  "urlCdn": "...",
-  "videoId": "...",
-  "title": "...",
-  "poster": "..."
-}
-```
-
----
-
-## GET `/api/download/[id]`
-
-Mengunduh file yang telah selesai diproses.
-
----
-
-## GET `/api/history`
-
-Mengambil riwayat download.
-
----
-
-## DELETE `/api/history`
-
-Menghapus seluruh riwayat download.
-
----
-
-## GET `/api/health`
-
-Health check server.
-
----
-
-# Instalasi
-
-Clone repository
+## Installation
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/s-fajar15/streamvidoy.git
 
-cd vdy-web
-```
+cd streamvidoy
 
-Install dependency
-
-```bash
 npm install
-```
 
-Jalankan
-
-```bash
 npm run dev
 ```
 
-Buka
-
-```
-http://localhost:3000
-```
-
 ---
 
-# Persyaratan
+## Requirements
 
 - Node.js 18+
-- npm
 - FFmpeg
 - FFprobe
 
 Android (Termux)
 
 ```bash
-pkg update
-
 pkg install ffmpeg
-```
-
 ---
 
-# Komponen
-
-Project menggunakan reusable component seperti:
-
-- Button
-- Input
-- Card
-- Accordion
-- Progress
-- Skeleton
-- Toast
-
-serta komponen downloader:
-
-- Download Form
-- Video Info
-- History List
-
----
-
-# Hooks
-
-Project memiliki custom hook:
-
-- useDownload
-- useExtract
-- useHistory
-
----
-
-# Utility
-
-Utility utama:
-
-- Download Engine
-- Extract Engine
-- Header Generator
-- FFmpeg Helper
-- History Manager
-
----
-
-# Responsive
-
-Dioptimalkan untuk:
-
-- Android
-- iPhone (Safari)
-- Tablet
-- Laptop
-- Desktop
-- Ultrawide
-
----
-
-# Roadmap
-
-- [ ] Batch Download
-- [ ] Playlist Download
-- [ ] Subtitle Download
-- [ ] Resume Download
-- [ ] Multi Thread Download
-- [ ] Queue Download
-- [ ] Docker Support
-
----
-
-# Pengembangan
-
-```bash
-npm run lint
-
-npm run build
-
-npm run start
-```
-
----
-
-# Lisensi
+## License
 
 MIT License
 
 ---
-
-<div align="center">
-
-Made with ❤️ using Next.js & TypeScript
-
-</div>
