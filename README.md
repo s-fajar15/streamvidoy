@@ -1,11 +1,9 @@
 <div align="center">
 
-# VDY Downloader
+# Vidoy Downloader
 
 Modern, fast, and reliable video downloader built with Next.js 15.
-
 Extract video metadata, analyze HLS/CDN streams, and download media through a clean, responsive interface.
-
 [Demo](#) • [Documentation](#) • [Report Bug](#) • [Request Feature](#)
 
 ---
@@ -21,7 +19,6 @@ Extract video metadata, analyze HLS/CDN streams, and download media through a cl
 ---
 
 ## Overview
-
 Vidoy Downloader adalah aplikasi web modern untuk menganalisis, mengekstraksi, dan mengunduh video dari **vdy.to** menggunakan antarmuka yang cepat, bersih, dan responsif.
 
 Project ini dibangun dengan **Next.js App Router**, **React 19**, dan **Tailwind CSS v4**, serta mendukung ekstraksi **Direct MP4** maupun **HLS (.m3u8)**.
@@ -87,11 +84,8 @@ middleware.ts
 
 ```bash
 git clone https://github.com/s-fajar15/streamvidoy.git
-
 cd streamvidoy
-
 npm install
-
 npm run dev
 ```
 
