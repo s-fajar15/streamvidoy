@@ -42,11 +42,10 @@ Project ini dibangun dengan **Next.js App Router**, **React 19**, dan **Tailwind
 
 ## Preview
 
-> Tambahkan screenshot aplikasi di sini.
-
-```
-/public/preview-light.png
-/public/preview-dark.png
+<p align="center">
+  <img src="./assets/preview1.jpg" width="48%" alt="nothing">
+  <img src="./assets/preview2.jpg" width="48%" alt="nothing">
+</p>
 ```
 
 ---
