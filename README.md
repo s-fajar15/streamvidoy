@@ -4,7 +4,6 @@
 
 Modern, fast, and reliable video downloader built with Next.js 15.
 Extract video metadata, analyze HLS/CDN streams, and download media through a clean, responsive interface.
-[Demo](#) • [Documentation](#) • [Report Bug](#) • [Request Feature](#)
 
 ---
 
