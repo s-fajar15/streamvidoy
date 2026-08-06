@@ -46,7 +46,6 @@ Project ini dibangun dengan **Next.js App Router**, **React 19**, dan **Tailwind
   <img src="./assets/preview1.jpg" width="48%" alt="nothing">
   <img src="./assets/preview2.jpg" width="48%" alt="nothing">
 </p>
-```
 
 ---
 
