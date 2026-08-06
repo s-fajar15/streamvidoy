@@ -1,100 +1,65 @@
-import * as React from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { useExtract } from "@/hooks/use-extract"
-import { validateUrlAction } from "@/actions/validation"
-import { toast } from "sonner"
-import { VideoInfo } from "./video-info"
+"use client";
 
-const formSchema = z.object({
-  url: z.string().url("Format URL tidak valid"),
-})
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Clipboard } from "lucide-react";
 
-type FormValues = z.infer<typeof formSchema>
+interface DownloadFormProps {
+  onSubmit?: (url: string) => void;
+  isLoading?: boolean;
+}
 
-export function DownloadForm() {
-  const extract = useExtract()
-  
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    setValue,
-  } = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      url: "",
-    },
-  })
-
-  const onSubmit = async (data: FormValues) => {
-    const validation = await validateUrlAction(data.url)
-    if (!validation.success) {
-      toast.error(validation.error)
-      return
-    }
-    
-    extract.mutate(data.url, {
-      onError: (error) => {
-        toast.error(error.message)
-      }
-    })
-  }
+export function DownloadForm({ onSubmit, isLoading }: DownloadFormProps) {
+  const [url, setUrl] = useState("");
 
   const handlePaste = async () => {
     try {
-      const text = await navigator.clipboard.readText()
+      const text = await navigator.clipboard.readText();
       if (text) {
-        setValue("url", text, { shouldValidate: true })
+        setUrl(text);
       }
-    } catch {
-      toast.error("Gagal membaca clipboard")
+    } catch (err) {
+      console.error("Gagal menempelkan teks dari clipboard:", err);
     }
-  }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!url.trim()) return;
+    onSubmit?.(url);
+  };
 
   return (
-    <div className="w-full max-w-2xl mx-auto flex flex-col gap-8">
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-        <div className="flex flex-col gap-2">
-          <Label htmlFor="url" className="font-mono text-[18px] uppercase tracking-[0.54px]">URL Video VDY</Label>
-          <div className="relative flex items-center">
-            <Input
-              id="url"
-              placeholder="https://vdy.to/e/..."
-              className="pr-24"
-              disabled={extract.isPending}
-              {...register("url")}
-            />
-            <Button
-              type="button"
-              variant="tertiary-text"
-              className="absolute right-2"
-              onClick={handlePaste}
-              disabled={extract.isPending}
-            >
-              Paste
-            </Button>
-          </div>
-          {errors.url && (
-            <span className="text-destructive font-sans text-[16px]">{errors.url.message}</span>
-          )}
-        </div>
-        <Button type="submit" variant="primary" disabled={extract.isPending} className="self-start">
-          {extract.isPending ? "Memproses..." : "Ekstrak Video"}
+    <form onSubmit={handleSubmit} className="w-full flex flex-col sm:flex-row gap-sm">
+      <div className="relative flex items-center flex-1">
+        <input
+          type="url"
+          placeholder="Masukkan URL vdy (contoh: https://vdy.to/d/...)"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          required
+          disabled={isLoading}
+          className="w-full bg-white text-[#0a0a0a] placeholder:text-[#888888] font-sans text-[15px] sm:text-[16px] rounded-xl pl-md pr-12 py-sm border border-[#e5e5e5] focus:outline-none focus:border-[#00d4a4] transition-all h-[48px] disabled:opacity-50"
+        />
+        <Button
+          type="button"
+          variant="ghost"
+          className="absolute right-2 text-[#5a5a5c] hover:text-[#0a0a0a]"
+          onClick={handlePaste}
+          disabled={isLoading}
+        >
+          <Clipboard className="w-4 h-4" />
         </Button>
-      </form>
+      </div>
 
-      {extract.isPending && (
-        <div className="w-full h-[200px] bg-muted animate-pulse rounded-lg" />
-      )}
-
-      {extract.data && (
-        <VideoInfo data={extract.data} />
-      )}
-    </div>
-  )
+      <Button
+        type="submit"
+        variant="accent"
+        disabled={isLoading}
+        className="h-[48px] px-[28px] font-bold text-[14px] whitespace-nowrap"
+      >
+        {isLoading ? "Mengekstrak..." : "Ekstrak Stream"}
+      </Button>
+    </form>
+  );
 }
