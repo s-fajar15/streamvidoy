@@ -34,7 +34,6 @@ export function saveHistory(entry: Omit<DownloadHistory, "id">): void {
     history.unshift(newEntry);
     fs.writeFileSync(HISTORY_FILE, JSON.stringify(history, null, 2), "utf-8");
   } catch {
-    //
   }
 }
 
@@ -43,6 +42,5 @@ export function clearHistory(): void {
     ensureHistoryFile();
     fs.writeFileSync(HISTORY_FILE, JSON.stringify([]), "utf-8");
   } catch {
-    //
   }
 }

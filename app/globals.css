@@ -4,66 +4,99 @@
 
 @layer base {
   :root {
-    --primary: #0a0a0a;
+    --primary: #3b82f6;
     --on-primary: #ffffff;
-    --brand-green: #00d4a4;
-    --brand-green-deep: #00b48a;
-    --brand-green-soft: #7cebcb;
-    --brand-tag: #3772cf;
-    --brand-warn: #c37d0d;
-    --brand-error: #d45656;
-    --hero-sky-from: #87a8c8;
-    --hero-sky-to: #f5e9d8;
-    --hero-dark-from: #1a3d4a;
-    --hero-dark-to: #2d5a4f;
-    --canvas: #ffffff;
-    --canvas-dark: #0a0a0a;
-    --surface: #f7f7f7;
-    --surface-soft: #fafafa;
-    --surface-code: #1c1c1e;
-    --hairline: #e5e5e5;
-    --hairline-soft: #ededed;
-    --hairline-dark: #1f1f1f;
-    --ink: #0a0a0a;
-    --charcoal: #1c1c1e;
-    --slate: #3a3a3c;
-    --steel: #5a5a5c;
-    --stone: #888888;
-    --muted: #a8a8aa;
-    --on-dark: #ffffff;
-    --on-dark-muted: #b3b3b3;
+
+    --brand-green: #3b82f6;
+    --brand-green-deep: #2563eb;
+    --brand-green-soft: #93c5fd;
+
+    --brand-tag: #60a5fa;
+    --brand-warn: #f59e0b;
+    --brand-error: #ef4444;
+
+    --canvas: #090a0c;
+    --canvas-dark: #050608;
+    --surface: #101216;
+    --surface-soft: #16191e;
+    --surface-code: #0c0e12;
+
+    --hairline: #24272d;
+    --hairline-soft: #1a1d22;
+    --hairline-dark: #30343b;
+
+    --ink: #f5f5f5;
+    --charcoal: #d9d9d9;
+    --slate: #a3a3a3;
+    --steel: #858585;
+    --stone: #666666;
+    --muted: #666666;
+
+    --on-dark: #f5f5f5;
+    --on-dark-muted: #858585;
+
     --background: var(--canvas);
     --foreground: var(--ink);
     --border: var(--hairline);
     --input: var(--hairline);
-    --ring: var(--brand-green);
+    --ring: var(--primary);
+
+    --card: var(--surface);
+    --card-foreground: var(--ink);
+    --muted-bg: var(--surface);
+    --muted-foreground: var(--slate);
+
+    --destructive: var(--brand-error);
+    --destructive-foreground: #ffffff;
+    --accent-magenta: #60a5fa;
   }
 
   .dark {
-    --primary: #ffffff;
-    --on-primary: #0a0a0a;
-    --brand-green: #00d4a4;
-    --brand-green-deep: #00b48a;
-    --brand-green-soft: #1a3d4a;
-    --canvas: #0a0a0a;
-    --canvas-dark: #000000;
-    --surface: #1c1c1e;
-    --surface-soft: #141414;
-    --surface-code: #141414;
-    --hairline: #2e2e2e;
-    --hairline-soft: #1f1f1f;
-    --ink: #ffffff;
-    --charcoal: #f7f7f7;
-    --slate: #a8a8aa;
-    --steel: #888888;
-    --muted: #5a5a5c;
-    --on-dark: #ffffff;
-    --on-dark-muted: #b3b3b3;
+    --primary: #3b82f6;
+    --on-primary: #ffffff;
+
+    --brand-green: #3b82f6;
+    --brand-green-deep: #2563eb;
+    --brand-green-soft: #93c5fd;
+
+    --brand-tag: #60a5fa;
+    --brand-warn: #f59e0b;
+    --brand-error: #ef4444;
+
+    --canvas: #090a0c;
+    --canvas-dark: #050608;
+    --surface: #101216;
+    --surface-soft: #16191e;
+    --surface-code: #0c0e12;
+
+    --hairline: #24272d;
+    --hairline-soft: #1a1d22;
+    --hairline-dark: #30343b;
+
+    --ink: #f5f5f5;
+    --charcoal: #d9d9d9;
+    --slate: #a3a3a3;
+    --steel: #858585;
+    --stone: #666666;
+    --muted: #666666;
+
+    --on-dark: #f5f5f5;
+    --on-dark-muted: #858585;
+
     --background: var(--canvas);
     --foreground: var(--ink);
     --border: var(--hairline);
     --input: var(--hairline);
-    --ring: var(--brand-green);
+    --ring: var(--primary);
+
+    --card: var(--surface);
+    --card-foreground: var(--ink);
+    --muted-bg: var(--surface);
+    --muted-foreground: var(--slate);
+
+    --destructive: var(--brand-error);
+    --destructive-foreground: #ffffff;
+    --accent-magenta: #60a5fa;
   }
 }
 
@@ -71,7 +104,42 @@
   * {
     @apply border-border;
   }
+
+  html {
+    background: var(--background);
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--ink);
+  }
+
+  p {
+    color: var(--charcoal);
+  }
+
+  small {
+    color: var(--slate);
+  }
+
+  a {
+    color: inherit;
+  }
+
+  ::placeholder {
+    color: var(--steel);
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: var(--on-primary);
   }
 }

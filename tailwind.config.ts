@@ -54,6 +54,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-figma-sans)", ...fontFamily.sans],
         mono: ["var(--font-figma-mono)", ...fontFamily.mono],
+        display: ["var(--font-display)", ...fontFamily.sans],
       },
       spacing: {
         xxs: "4px",

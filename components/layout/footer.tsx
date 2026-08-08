@@ -7,9 +7,9 @@ export function Footer() {
       <div className="container mx-auto max-w-[1280px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="font-sans font-[700] text-[24px]">Stream Downloader</h2>
+            <h2 className="font-sans font-[700] text-[24px]">Stream</h2>
             <p className="font-sans font-[330] text-[16px] mt-4 max-w-sm text-muted-foreground">
-              Aplikasi web untuk mengunduh video dari streamrizz.com dengan performa tinggi.
+              Alat ekstraksi dan unduh video dari tautan stream, langsung dari browser.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">

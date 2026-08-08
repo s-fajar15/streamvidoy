@@ -7,7 +7,7 @@ export function TopNav() {
     <header className="sticky top-0 z-50 w-full h-[56px] bg-background text-foreground flex items-center justify-between px-4 md:px-8 border-b border-border">
       <div className="flex items-center gap-4">
         <Link href="/" className="font-sans font-[700] text-[20px] tracking-[-0.14px]">
-          VDY Downloader
+          Stream
         </Link>
       </div>
       <nav className="flex items-center gap-2">

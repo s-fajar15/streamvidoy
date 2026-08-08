@@ -9,10 +9,12 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground rounded-full hover:bg-charcoal",
-        accent: "bg-brand-green text-primary rounded-full hover:bg-brand-green-deep",
+        primary: "bg-brand-green text-on-primary rounded-full hover:bg-brand-green-deep",
+        accent: "bg-brand-green text-on-primary rounded-full hover:bg-brand-green-deep",
         secondary: "bg-transparent text-foreground border border-hairline rounded-full hover:bg-surface",
-        onDark: "bg-white text-primary rounded-full hover:bg-slate-100",
+        onDark: "bg-white text-[#0a0a0a] rounded-full hover:bg-slate-100",
         ghost: "bg-transparent text-foreground rounded-md hover:bg-surface px-3 py-2",
+        "tertiary-text": "bg-transparent text-muted-foreground hover:text-foreground underline-offset-4 hover:underline px-2 py-1",
         icon: "bg-background text-foreground border border-hairline rounded-full h-[32px] w-[32px]",
       },
       size: {
