@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     const { url } = parsed.data;
     const urlObj = new URL(url);
 
-    if (!urlObj.hostname.includes("vdy.to")) {
+    if (!urlObj.hostname.includes("streamrizz.com")) {
       return NextResponse.json(
         { error: "Domain tidak didukung. Harap gunakan URL dari vdy.to" },
         { status: 400 }

@@ -15,7 +15,7 @@ export function TopNav() {
           <Link href="#history">Riwayat</Link>
         </Button>
         <Button variant="primary" asChild>
-          <Link href="/">Unduh Sekarang</Link>
+          <Link href="/">Download Sekarang</Link>
         </Button>
       </nav>
     </header>

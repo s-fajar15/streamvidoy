@@ -14,7 +14,7 @@ export function HistoryList() {
   if (history.length === 0) {
     return (
       <div className="w-full py-12 flex flex-col items-center justify-center border border-dashed rounded-lg text-muted-foreground">
-        <span className="font-sans text-[18px] font-[320]">Belum ada riwayat unduhan.</span>
+        <span className="font-sans text-[18px] font-[320]">Belum ada riwayat download.</span>
       </div>
     )
   }
@@ -59,7 +59,7 @@ export function HistoryList() {
               <div className="mt-4">
                  <Button variant="secondary" asChild className="w-full">
                     <a href={`/api/download/${item.videoId}`} download>
-                      Unduh Ulang
+                      Download Ulang
                     </a>
                  </Button>
               </div>

@@ -7,9 +7,9 @@ export function Footer() {
       <div className="container mx-auto max-w-[1280px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="font-sans font-[700] text-[24px]">VDY Downloader</h2>
+            <h2 className="font-sans font-[700] text-[24px]">Stream Downloader</h2>
             <p className="font-sans font-[330] text-[16px] mt-4 max-w-sm text-muted-foreground">
-              Aplikasi web untuk mengunduh video dari vdy.to dengan performa tinggi.
+              Aplikasi web untuk mengunduh video dari streamrizz.com dengan performa tinggi.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -24,11 +24,6 @@ export function Footer() {
               <Link href="#" className="font-sans text-[16px] font-[330] hover:underline">Ketentuan</Link>
             </div>
           </div>
-        </div>
-        <div className="mt-16 pt-8 border-t border-hairline-soft flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="font-mono text-[12px] uppercase tracking-[0.60px]">
-            © 2026 VDY Downloader. All rights reserved.
-          </span>
         </div>
       </div>
     </footer>

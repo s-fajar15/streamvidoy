@@ -15,10 +15,10 @@ export async function validateUrlAction(url: string) {
   
   const urlObj = new URL(url);
   
-  if (!urlObj.hostname.includes("vdy.to")) {
+  if (!urlObj.hostname.includes("streamrizz.com")) {
     return {
       success: false,
-      error: "Domain tidak didukung. Harap gunakan URL dari vdy.to",
+      error: "Domain tidak didukung. Harap gunakan URL dari streamrizz.com",
     };
   }
   

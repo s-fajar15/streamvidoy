@@ -16,8 +16,8 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vidoy Downloader",
-  description: "Unduh video kualitas tinggi dengan cepat dan aman.",
+  title: "Stream Downloader",
+  description: "Unduh video tanpa ribet",
 };
 
 export default function RootLayout({

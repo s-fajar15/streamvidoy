@@ -34,7 +34,7 @@ export function DownloadForm({ onSubmit, isLoading }: DownloadFormProps) {
       <div className="relative flex items-center flex-1">
         <input
           type="url"
-          placeholder="Masukkan URL vdy (contoh: https://vdy.to/d/...)"
+          placeholder="Masukkan URL (contoh: https://streamrizz.com/d/...)"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           required

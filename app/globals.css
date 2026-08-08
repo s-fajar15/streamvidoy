@@ -32,8 +32,6 @@
     --muted: #a8a8aa;
     --on-dark: #ffffff;
     --on-dark-muted: #b3b3b3;
-
-    /* Semantic mapping for Shadcn */
     --background: var(--canvas);
     --foreground: var(--ink);
     --border: var(--hairline);
@@ -61,7 +59,6 @@
     --muted: #5a5a5c;
     --on-dark: #ffffff;
     --on-dark-muted: #b3b3b3;
-
     --background: var(--canvas);
     --foreground: var(--ink);
     --border: var(--hairline);
