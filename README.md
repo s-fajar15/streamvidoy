@@ -1,6 +1,6 @@
 <div align="center">
 
-# Vidoy Downloader
+# Stream
 
 Modern, fast, and reliable video downloader built with Next.js 15.
 Extract video metadata, analyze HLS/CDN streams, and download media through a clean, responsive interface.
@@ -18,9 +18,11 @@ Extract video metadata, analyze HLS/CDN streams, and download media through a cl
 ---
 
 ## Overview
-Vidoy Downloader adalah aplikasi web modern untuk menganalisis, mengekstraksi, dan mengunduh video dari **vdy.to** menggunakan antarmuka yang cepat, bersih, dan responsif.
+Stream adalah aplikasi web untuk menganalisis, mengekstraksi, dan mengunduh video dari **streamrizz.com** menggunakan antarmuka yang cepat, bersih, dan responsif.
 
-Project ini dibangun dengan **Next.js App Router**, **React 19**, dan **Tailwind CSS v4**, serta mendukung ekstraksi **Direct MP4** maupun **HLS (.m3u8)**.
+Project ini dibangun dengan **Next.js App Router**, **React 19**, dan **Tailwind CSS**, serta mendukung ekstraksi **Direct MP4** maupun **HLS (.m3u8)**.
+
+Landing page tersedia di `/`, sementara downloader utama (ekstraksi, download, riwayat) berada di `/app`.
 
 ---
 
@@ -55,7 +57,7 @@ Project ini dibangun dengan **Next.js App Router**, **React 19**, dan **Tailwind
 | Next.js | 15 |
 | React | 19 |
 | TypeScript | Latest |
-| Tailwind CSS | v4 |
+| Tailwind CSS | v3 |
 | Framer Motion | Latest |
 | Lucide React | Latest |
 | FFmpeg | Required |
@@ -66,6 +68,9 @@ Project ini dibangun dengan **Next.js App Router**, **React 19**, dan **Tailwind
 
 ```text
 app/
+  page.tsx        # landing page (/)
+  app/page.tsx    # downloader utama (/app)
+  api/            # API routes (extract, download, history)
 components/
 hooks/
 lib/
@@ -97,4 +102,5 @@ npm run dev
 Android (Termux)
 ```bash
 pkg install ffmpeg
+```
 
